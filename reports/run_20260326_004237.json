@@ -1,0 +1,28 @@
+{
+  "run_id": "20260326_004237",
+  "started_at": "2026-03-26T00:42:37+08:00",
+  "repo_root": "/home/ubuntu/tsgit/ai_grading_manul",
+  "exams": [
+    "test1",
+    "test2"
+  ],
+  "model": "qwen/qwen3.5-plus-02-15",
+  "llm_endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "results": [
+    {
+      "exam": "test1",
+      "total": 8,
+      "ok": 8,
+      "failed": 0,
+      "failed_items": []
+    },
+    {
+      "exam": "test2",
+      "total": 9,
+      "ok": 9,
+      "failed": 0,
+      "failed_items": []
+    }
+  ],
+  "finished_at": "2026-03-26T01:20:32+08:00"
+}
