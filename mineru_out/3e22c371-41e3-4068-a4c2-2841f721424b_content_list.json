@@ -1,0 +1,235 @@
+[
+    {
+        "type": "text",
+        "text": "1. (40 分)",
+        "bbox": [
+            187,
+            182,
+            268,
+            200
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "解：(1) 位于 $r \\sim  {rdr}$ 阶",
+        "bbox": [
+            58,
+            207,
+            228,
+            227
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\ne ^ {x} T = \\frac {k L}{d x} (d r - d x) = k L (\\frac {d r}{d x} - 1)\n$$",
+        "text_format": "latex",
+        "bbox": [
+            77,
+            231,
+            319,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} \\therefore d T = k L \\frac {d ^ {2} r}{d x ^ {2}} d x \\\\ \\therefore k L \\frac {d ^ {2} r}{d x ^ {2}} d x = - \\frac {m}{L} d x w _ {1} ^ {2} r \\\\ \\mathrm {即} \\frac {d ^ {2} r}{d x ^ {2}} = - \\frac {z ^ {2}}{9} \\frac {r}{L ^ {2}} \\\\ \\therefore \\frac {d r ^ {1}}{d r} r ^ {1} = - \\frac {\\pi^ {2}}{9} \\frac {r}{l ^ {2}} \\Rightarrow 3 r ^ {1 2} = - \\frac {\\pi^ {2}}{9} \\frac {r ^ {2}}{l ^ {2}} + C _ {1} \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            60,
+            260,
+            377,
+            373
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "移项并 积分：",
+        "bbox": [
+            58,
+            385,
+            181,
+            402
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\frac {3 c}{2} \\arctan^ {1 0} \\sqrt {\\frac {x ^ {2}}{9 c ^ {2}}} r = x + \\delta_ {2}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            65,
+            409,
+            497,
+            438
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\therefore r = \\sqrt {\\frac {9 L ^ {2} c}{\\pi^ {2}}} \\sin h \\frac {\\pi x}{3 L}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            63,
+            444,
+            496,
+            475
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\therefore \\sqrt {c _ {1}} \\cos \\frac {\\pi}{3} = 1 \\Rightarrow \\sqrt {c _ {1}} = \\frac {1}{\\cos \\frac {\\pi}{3}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            59,
+            484,
+            495,
+            512
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\therefore r = \\frac {3 4}{x \\cos \\frac {\\pi}{3}} \\sin \\frac {\\pi x}{3 2} \\quad \\frac {3 2}{x} \\quad \\frac {\\sin \\frac {\\pi x}{3 2}}{\\cos \\frac {\\pi}{3}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            64,
+            517,
+            489,
+            554
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\nR = \\frac {3 L}{\\pi} \\tan \\frac {\\pi}{3} = 0. 7 4 6 \\mathrm {L} 1. 6 5 \\mathrm {L}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            72,
+            563,
+            487,
+            591
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} I _ {1} = \\int \\frac {m}{L} d x r ^ {- 2} = \\int_ {0} ^ {L} \\frac {9}{x ^ {2}} m L \\frac {\\sin^ {2} \\frac {2 x}{3 L}}{\\cos^ {2} \\frac {x}{3}} d x \\\\ = - \\frac {9}{\\pi^ {2}} \\frac {m L}{\\cos h ^ {2} \\frac {\\pi}{3}} \\cdot (\\frac {1}{4} \\sin h \\frac {2 \\pi}{3} - \\frac {L}{2}) Q \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            51,
+            598,
+            497,
+            682
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} \\therefore I _ {1} = m L ^ {2} - \\frac {9}{x ^ {2} \\cos^ {2} \\frac {\\pi}{3}} (- \\frac {3}{4 2} \\sin \\frac {2 \\pi}{3} + \\frac {1}{2}) \\\\ I _ {1} = 0. 4 2 m l ^ {2} 1. 0 7 m L ^ {2} \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            50,
+            692,
+            498,
+            764
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} (3) \\mathrm {此 时} r = \\sqrt {\\frac {3 6 c ^ {2}}{x ^ {2}} c _ {2}} \\sin \\theta \\frac {\\pi x}{6 c} \\\\ \\therefore k L (\\sqrt {c _ {2}} \\cos \\frac {\\pi}{6} - 1) = x m \\omega^ {2} \\frac {6 c}{\\pi} \\sqrt {c _ {2}} \\sin \\frac {\\pi}{6} \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            50,
+            771,
+            484,
+            834
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/0c9aa937c4297a4c2e728bf5627a612bc00c2614ad2858c1e1df9db5f7efeaa6.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "bbox": [
+            558,
+            217,
+            792,
+            275
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{l} I = x m c _ {2} \\sin^ {2} \\frac {\\pi}{6} \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} + \\int_ {0} ^ {L} \\frac {m}{L} d x \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} c _ {2} \\sin^ {2} \\frac {\\pi x}{6 L} d x \\\\ I _ {1} \\omega_ {1} = I \\omega_ {2} \\\\ \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            512,
+            288,
+            956,
+            347
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "得 $x = 0 \\cdot  {726}$ ",
+        "bbox": [
+            511,
+            362,
+            671,
+            381
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "第二十届学而思数理化竞赛联考",
+        "bbox": [
+            170,
+            142,
+            385,
+            155
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "XPhO $\\cdot$ 20th ",
+        "bbox": [
+            712,
+            140,
+            805,
+            153
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "? 学而思",
+        "bbox": [
+            179,
+            886,
+            371,
+            915
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "2/9 ",
+        "bbox": [
+            784,
+            904,
+            808,
+            916
+        ],
+        "page_idx": 0
+    }
+]

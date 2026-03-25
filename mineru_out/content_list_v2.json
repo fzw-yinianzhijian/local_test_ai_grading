@@ -1,0 +1,352 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. (40 分)"
+                    }
+                ]
+            },
+            "bbox": [
+                187,
+                182,
+                268,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "解：(1) 位于  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "r \\sim  {rdr}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 阶"
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                207,
+                228,
+                227
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "e ^ {x} T = \\frac {k L}{d x} (d r - d x) = k L (\\frac {d r}{d x} - 1)",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/184e390249083445161913ce6398a07318057443c9e5c27531410054286d7f28.jpg"
+                }
+            },
+            "bbox": [
+                77,
+                231,
+                319,
+                252
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} \\therefore d T = k L \\frac {d ^ {2} r}{d x ^ {2}} d x \\\\ \\therefore k L \\frac {d ^ {2} r}{d x ^ {2}} d x = - \\frac {m}{L} d x w _ {1} ^ {2} r \\\\ \\mathrm {即} \\frac {d ^ {2} r}{d x ^ {2}} = - \\frac {z ^ {2}}{9} \\frac {r}{L ^ {2}} \\\\ \\therefore \\frac {d r ^ {1}}{d r} r ^ {1} = - \\frac {\\pi^ {2}}{9} \\frac {r}{l ^ {2}} \\Rightarrow 3 r ^ {1 2} = - \\frac {\\pi^ {2}}{9} \\frac {r ^ {2}}{l ^ {2}} + C _ {1} \\\\ \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/f46b234176c3a1c9ca74422a0bf877f35426a72e26d9785a1f64d32c0f762771.jpg"
+                }
+            },
+            "bbox": [
+                60,
+                260,
+                377,
+                373
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "移项并 积分："
+                    }
+                ]
+            },
+            "bbox": [
+                58,
+                385,
+                181,
+                402
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\frac {3 c}{2} \\arctan^ {1 0} \\sqrt {\\frac {x ^ {2}}{9 c ^ {2}}} r = x + \\delta_ {2}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/65c96849f0e591998de0ce26f18defa85d8524764546434f80b9a3f93104799f.jpg"
+                }
+            },
+            "bbox": [
+                65,
+                409,
+                497,
+                438
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\therefore r = \\sqrt {\\frac {9 L ^ {2} c}{\\pi^ {2}}} \\sin h \\frac {\\pi x}{3 L}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/a110a033b041bff7383242d8b9c88ee60934f3704c2e67d0b6f7a7557a46cd57.jpg"
+                }
+            },
+            "bbox": [
+                63,
+                444,
+                496,
+                475
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\therefore \\sqrt {c _ {1}} \\cos \\frac {\\pi}{3} = 1 \\Rightarrow \\sqrt {c _ {1}} = \\frac {1}{\\cos \\frac {\\pi}{3}}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/ee938d0616eaf71c55f23c4bf90ddd23013c5569996ffc43537c8300dea3ec0e.jpg"
+                }
+            },
+            "bbox": [
+                59,
+                484,
+                495,
+                512
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\therefore r = \\frac {3 4}{x \\cos \\frac {\\pi}{3}} \\sin \\frac {\\pi x}{3 2} \\quad \\frac {3 2}{x} \\quad \\frac {\\sin \\frac {\\pi x}{3 2}}{\\cos \\frac {\\pi}{3}}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/c3152b378f8d523cc676d8803b6ad3ecfc4a39ea5a7426a80d8474b7bf965639.jpg"
+                }
+            },
+            "bbox": [
+                64,
+                517,
+                489,
+                554
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "R = \\frac {3 L}{\\pi} \\tan \\frac {\\pi}{3} = 0. 7 4 6 \\mathrm {L} 1. 6 5 \\mathrm {L}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/71f4d9000eb10d8d47726e33fed1dc9b46076041b347888cf0283c1d6c596f01.jpg"
+                }
+            },
+            "bbox": [
+                72,
+                563,
+                487,
+                591
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} I _ {1} = \\int \\frac {m}{L} d x r ^ {- 2} = \\int_ {0} ^ {L} \\frac {9}{x ^ {2}} m L \\frac {\\sin^ {2} \\frac {2 x}{3 L}}{\\cos^ {2} \\frac {x}{3}} d x \\\\ = - \\frac {9}{\\pi^ {2}} \\frac {m L}{\\cos h ^ {2} \\frac {\\pi}{3}} \\cdot (\\frac {1}{4} \\sin h \\frac {2 \\pi}{3} - \\frac {L}{2}) Q \\\\ \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/e627ddad81ddb4f5de279f63d9cfac19a939a9fdcc27e2ef3e37b84da29e352b.jpg"
+                }
+            },
+            "bbox": [
+                51,
+                598,
+                497,
+                682
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} \\therefore I _ {1} = m L ^ {2} - \\frac {9}{x ^ {2} \\cos^ {2} \\frac {\\pi}{3}} (- \\frac {3}{4 2} \\sin \\frac {2 \\pi}{3} + \\frac {1}{2}) \\\\ I _ {1} = 0. 4 2 m l ^ {2} 1. 0 7 m L ^ {2} \\\\ \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/d3d3e8235ad12036764a8f255cbdfbfde3a5c33058ed2557dcb14e489b5e055c.jpg"
+                }
+            },
+            "bbox": [
+                50,
+                692,
+                498,
+                764
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} (3) \\mathrm {此 时} r = \\sqrt {\\frac {3 6 c ^ {2}}{x ^ {2}} c _ {2}} \\sin \\theta \\frac {\\pi x}{6 c} \\\\ \\therefore k L (\\sqrt {c _ {2}} \\cos \\frac {\\pi}{6} - 1) = x m \\omega^ {2} \\frac {6 c}{\\pi} \\sqrt {c _ {2}} \\sin \\frac {\\pi}{6} \\\\ \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/2a2967e0da877f4e0ca06508e4f10f2ca0951673f53b16efa181be5c73a4ef1a.jpg"
+                }
+            },
+            "bbox": [
+                50,
+                771,
+                484,
+                834
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0c9aa937c4297a4c2e728bf5627a612bc00c2614ad2858c1e1df9db5f7efeaa6.jpg"
+                },
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                558,
+                217,
+                792,
+                275
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "\\begin{array}{l} I = x m c _ {2} \\sin^ {2} \\frac {\\pi}{6} \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} + \\int_ {0} ^ {L} \\frac {m}{L} d x \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} c _ {2} \\sin^ {2} \\frac {\\pi x}{6 L} d x \\\\ I _ {1} \\omega_ {1} = I \\omega_ {2} \\\\ \\end{array}",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/4802fd1135ccc35dffc38003f478764cf154c35c1174215ed63203bc2db8df87.jpg"
+                }
+            },
+            "bbox": [
+                512,
+                288,
+                956,
+                347
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "得  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "x = 0 \\cdot  {726}"
+                    }
+                ]
+            },
+            "bbox": [
+                511,
+                362,
+                671,
+                381
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "第二十届学而思数理化竞赛联考"
+                    }
+                ]
+            },
+            "bbox": [
+                170,
+                142,
+                385,
+                155
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "XPhO  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\cdot"
+                    },
+                    {
+                        "type": "text",
+                        "content": " 20th "
+                    }
+                ]
+            },
+            "bbox": [
+                712,
+                140,
+                805,
+                153
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "? 学而思"
+                    }
+                ]
+            },
+            "bbox": [
+                179,
+                886,
+                371,
+                915
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2/9 "
+                    }
+                ]
+            },
+            "bbox": [
+                784,
+                904,
+                808,
+                916
+            ]
+        }
+    ]
+]

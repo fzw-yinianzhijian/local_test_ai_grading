@@ -1,0 +1,752 @@
+{
+    "pdf_info": [
+        {
+            "para_blocks": [
+                {
+                    "bbox": [
+                        530,
+                        753,
+                        759,
+                        824
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                530,
+                                753,
+                                759,
+                                824
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        530,
+                                        753,
+                                        759,
+                                        824
+                                    ],
+                                    "type": "text",
+                                    "content": "1. (40 分)"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 2
+                },
+                {
+                    "bbox": [
+                        166,
+                        856,
+                        646,
+                        939
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                166,
+                                856,
+                                646,
+                                939
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        166,
+                                        856,
+                                        646,
+                                        939
+                                    ],
+                                    "type": "text",
+                                    "content": "解：(1) 位于 "
+                                },
+                                {
+                                    "bbox": [
+                                        166,
+                                        856,
+                                        646,
+                                        939
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "r \\sim  {rdr}"
+                                },
+                                {
+                                    "bbox": [
+                                        166,
+                                        856,
+                                        646,
+                                        939
+                                    ],
+                                    "type": "text",
+                                    "content": " 阶"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 3
+                },
+                {
+                    "bbox": [
+                        220,
+                        955,
+                        903,
+                        1042
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                220,
+                                955,
+                                903,
+                                1042
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        220,
+                                        955,
+                                        903,
+                                        1042
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "e ^ {x} T = \\frac {k L}{d x} (d r - d x) = k L (\\frac {d r}{d x} - 1)",
+                                    "image_path": "184e390249083445161913ce6398a07318057443c9e5c27531410054286d7f28.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 4
+                },
+                {
+                    "bbox": [
+                        172,
+                        1075,
+                        1067,
+                        1540
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                172,
+                                1075,
+                                1067,
+                                1540
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        172,
+                                        1075,
+                                        1067,
+                                        1540
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} \\therefore d T = k L \\frac {d ^ {2} r}{d x ^ {2}} d x \\\\ \\therefore k L \\frac {d ^ {2} r}{d x ^ {2}} d x = - \\frac {m}{L} d x w _ {1} ^ {2} r \\\\ \\mathrm {即} \\frac {d ^ {2} r}{d x ^ {2}} = - \\frac {z ^ {2}}{9} \\frac {r}{L ^ {2}} \\\\ \\therefore \\frac {d r ^ {1}}{d r} r ^ {1} = - \\frac {\\pi^ {2}}{9} \\frac {r}{l ^ {2}} \\Rightarrow 3 r ^ {1 2} = - \\frac {\\pi^ {2}}{9} \\frac {r ^ {2}}{l ^ {2}} + C _ {1} \\\\ \\end{array}",
+                                    "image_path": "f46b234176c3a1c9ca74422a0bf877f35426a72e26d9785a1f64d32c0f762771.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 5
+                },
+                {
+                    "bbox": [
+                        166,
+                        1590,
+                        513,
+                        1660
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                166,
+                                1590,
+                                513,
+                                1660
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        166,
+                                        1590,
+                                        513,
+                                        1660
+                                    ],
+                                    "type": "text",
+                                    "content": "移项并 积分："
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
+                },
+                {
+                    "bbox": [
+                        186,
+                        1689,
+                        1406,
+                        1808
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                186,
+                                1689,
+                                1406,
+                                1808
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        186,
+                                        1689,
+                                        1406,
+                                        1808
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\frac {3 c}{2} \\arctan^ {1 0} \\sqrt {\\frac {x ^ {2}}{9 c ^ {2}}} r = x + \\delta_ {2}",
+                                    "image_path": "65c96849f0e591998de0ce26f18defa85d8524764546434f80b9a3f93104799f.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 7
+                },
+                {
+                    "bbox": [
+                        180,
+                        1833,
+                        1403,
+                        1957
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                180,
+                                1833,
+                                1403,
+                                1957
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        180,
+                                        1833,
+                                        1403,
+                                        1957
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\therefore r = \\sqrt {\\frac {9 L ^ {2} c}{\\pi^ {2}}} \\sin h \\frac {\\pi x}{3 L}",
+                                    "image_path": "a110a033b041bff7383242d8b9c88ee60934f3704c2e67d0b6f7a7557a46cd57.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 8
+                },
+                {
+                    "bbox": [
+                        169,
+                        1998,
+                        1400,
+                        2113
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                169,
+                                1998,
+                                1400,
+                                2113
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        169,
+                                        1998,
+                                        1400,
+                                        2113
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\therefore \\sqrt {c _ {1}} \\cos \\frac {\\pi}{3} = 1 \\Rightarrow \\sqrt {c _ {1}} = \\frac {1}{\\cos \\frac {\\pi}{3}}",
+                                    "image_path": "ee938d0616eaf71c55f23c4bf90ddd23013c5569996ffc43537c8300dea3ec0e.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 9
+                },
+                {
+                    "bbox": [
+                        183,
+                        2134,
+                        1383,
+                        2286
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                183,
+                                2134,
+                                1383,
+                                2286
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        183,
+                                        2134,
+                                        1383,
+                                        2286
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\therefore r = \\frac {3 4}{x \\cos \\frac {\\pi}{3}} \\sin \\frac {\\pi x}{3 2} \\quad \\frac {3 2}{x} \\quad \\frac {\\sin \\frac {\\pi x}{3 2}}{\\cos \\frac {\\pi}{3}}",
+                                    "image_path": "c3152b378f8d523cc676d8803b6ad3ecfc4a39ea5a7426a80d8474b7bf965639.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 10
+                },
+                {
+                    "bbox": [
+                        206,
+                        2323,
+                        1378,
+                        2439
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                206,
+                                2323,
+                                1378,
+                                2439
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        206,
+                                        2323,
+                                        1378,
+                                        2439
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "R = \\frac {3 L}{\\pi} \\tan \\frac {\\pi}{3} = 0. 7 4 6 \\mathrm {L} 1. 6 5 \\mathrm {L}",
+                                    "image_path": "71f4d9000eb10d8d47726e33fed1dc9b46076041b347888cf0283c1d6c596f01.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 11
+                },
+                {
+                    "bbox": [
+                        146,
+                        2467,
+                        1406,
+                        2813
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                146,
+                                2467,
+                                1406,
+                                2813
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        146,
+                                        2467,
+                                        1406,
+                                        2813
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} I _ {1} = \\int \\frac {m}{L} d x r ^ {- 2} = \\int_ {0} ^ {L} \\frac {9}{x ^ {2}} m L \\frac {\\sin^ {2} \\frac {2 x}{3 L}}{\\cos^ {2} \\frac {x}{3}} d x \\\\ = - \\frac {9}{\\pi^ {2}} \\frac {m L}{\\cos h ^ {2} \\frac {\\pi}{3}} \\cdot (\\frac {1}{4} \\sin h \\frac {2 \\pi}{3} - \\frac {L}{2}) Q \\\\ \\end{array}",
+                                    "image_path": "e627ddad81ddb4f5de279f63d9cfac19a939a9fdcc27e2ef3e37b84da29e352b.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 12
+                },
+                {
+                    "bbox": [
+                        144,
+                        2855,
+                        1409,
+                        3151
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                144,
+                                2855,
+                                1409,
+                                3151
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        2855,
+                                        1409,
+                                        3151
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} \\therefore I _ {1} = m L ^ {2} - \\frac {9}{x ^ {2} \\cos^ {2} \\frac {\\pi}{3}} (- \\frac {3}{4 2} \\sin \\frac {2 \\pi}{3} + \\frac {1}{2}) \\\\ I _ {1} = 0. 4 2 m l ^ {2} 1. 0 7 m L ^ {2} \\\\ \\end{array}",
+                                    "image_path": "d3d3e8235ad12036764a8f255cbdfbfde3a5c33058ed2557dcb14e489b5e055c.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 13
+                },
+                {
+                    "bbox": [
+                        144,
+                        3180,
+                        1369,
+                        3440
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                144,
+                                3180,
+                                1369,
+                                3440
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        144,
+                                        3180,
+                                        1369,
+                                        3440
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} (3) \\mathrm {此 时} r = \\sqrt {\\frac {3 6 c ^ {2}}{x ^ {2}} c _ {2}} \\sin \\theta \\frac {\\pi x}{6 c} \\\\ \\therefore k L (\\sqrt {c _ {2}} \\cos \\frac {\\pi}{6} - 1) = x m \\omega^ {2} \\frac {6 c}{\\pi} \\sqrt {c _ {2}} \\sin \\frac {\\pi}{6} \\\\ \\end{array}",
+                                    "image_path": "2a2967e0da877f4e0ca06508e4f10f2ca0951673f53b16efa181be5c73a4ef1a.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        1578,
+                        898,
+                        2239,
+                        1133
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                1578,
+                                898,
+                                2239,
+                                1133
+                            ],
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        1578,
+                                        898,
+                                        2239,
+                                        1133
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                1578,
+                                                898,
+                                                2239,
+                                                1133
+                                            ],
+                                            "type": "image",
+                                            "image_path": "0c9aa937c4297a4c2e728bf5627a612bc00c2614ad2858c1e1df9db5f7efeaa6.jpg"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "index": 15,
+                            "angle": 0,
+                            "type": "image_body"
+                        }
+                    ],
+                    "index": 15
+                },
+                {
+                    "bbox": [
+                        1448,
+                        1190,
+                        2702,
+                        1433
+                    ],
+                    "type": "interline_equation",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1448,
+                                1190,
+                                2702,
+                                1433
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1448,
+                                        1190,
+                                        2702,
+                                        1433
+                                    ],
+                                    "type": "interline_equation",
+                                    "content": "\\begin{array}{l} I = x m c _ {2} \\sin^ {2} \\frac {\\pi}{6} \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} + \\int_ {0} ^ {L} \\frac {m}{L} d x \\cdot \\frac {3 6 L ^ {2}}{\\pi^ {2}} c _ {2} \\sin^ {2} \\frac {\\pi x}{6 L} d x \\\\ I _ {1} \\omega_ {1} = I \\omega_ {2} \\\\ \\end{array}",
+                                    "image_path": "4802fd1135ccc35dffc38003f478764cf154c35c1174215ed63203bc2db8df87.jpg"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 16
+                },
+                {
+                    "bbox": [
+                        1445,
+                        1495,
+                        1897,
+                        1573
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                1445,
+                                1495,
+                                1897,
+                                1573
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        1445,
+                                        1495,
+                                        1897,
+                                        1573
+                                    ],
+                                    "type": "text",
+                                    "content": "得 "
+                                },
+                                {
+                                    "bbox": [
+                                        1445,
+                                        1495,
+                                        1897,
+                                        1573
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "x = 0 \\cdot  {726}"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 17
+                }
+            ],
+            "discarded_blocks": [
+                {
+                    "bbox": [
+                        482,
+                        589,
+                        1090,
+                        642
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                482,
+                                589,
+                                1090,
+                                642
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        482,
+                                        589,
+                                        1090,
+                                        642
+                                    ],
+                                    "type": "text",
+                                    "content": "第二十届学而思数理化竞赛联考"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "bbox": [
+                        2013,
+                        580,
+                        2276,
+                        634
+                    ],
+                    "type": "header",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2013,
+                                580,
+                                2276,
+                                634
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2013,
+                                        580,
+                                        2276,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": "XPhO "
+                                },
+                                {
+                                    "bbox": [
+                                        2013,
+                                        580,
+                                        2276,
+                                        634
+                                    ],
+                                    "type": "inline_equation",
+                                    "content": "\\cdot"
+                                },
+                                {
+                                    "bbox": [
+                                        2013,
+                                        580,
+                                        2276,
+                                        634
+                                    ],
+                                    "type": "text",
+                                    "content": " 20th"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "bbox": [
+                        508,
+                        3654,
+                        1050,
+                        3773
+                    ],
+                    "type": "footer",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                508,
+                                3654,
+                                1050,
+                                3773
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        508,
+                                        3654,
+                                        1050,
+                                        3773
+                                    ],
+                                    "type": "text",
+                                    "content": "? 学而思"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 18
+                },
+                {
+                    "bbox": [
+                        2216,
+                        3728,
+                        2284,
+                        3778
+                    ],
+                    "type": "page_number",
+                    "angle": 0,
+                    "lines": [
+                        {
+                            "bbox": [
+                                2216,
+                                3728,
+                                2284,
+                                3778
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        2216,
+                                        3728,
+                                        2284,
+                                        3778
+                                    ],
+                                    "type": "text",
+                                    "content": "2/9"
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 19
+                }
+            ],
+            "page_size": [
+                2824,
+                4120
+            ],
+            "page_idx": 0
+        }
+    ],
+    "_backend": "hybrid",
+    "_ocr_enable": true,
+    "_vlm_ocr_enable": true,
+    "_version_name": "2.7.6"
+}
