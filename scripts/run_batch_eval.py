@@ -244,6 +244,29 @@ def to_message_text(x: Any) -> str:
 
 
 
+def extract_usage(raw: dict[str, Any]) -> dict[str, Any]:
+    usage = raw.get("usage") or {}
+    return {
+        "prompt_tokens": usage.get("prompt_tokens", 0),
+        "completion_tokens": usage.get("completion_tokens", 0),
+        "total_tokens": usage.get("total_tokens", 0),
+        "cost": usage.get("cost", 0),
+        "reasoning_tokens": (usage.get("completion_tokens_details") or {}).get("reasoning_tokens", 0),
+        "cached_tokens": (usage.get("prompt_tokens_details") or {}).get("cached_tokens", 0),
+    }
+
+
+def sum_usage(a: dict[str, Any], b: dict[str, Any]) -> dict[str, Any]:
+    keys = ("prompt_tokens", "completion_tokens", "total_tokens", "cost", "reasoning_tokens", "cached_tokens")
+    return {k: a.get(k, 0) + b.get(k, 0) for k in keys}
+
+
+ZERO_USAGE: dict[str, Any] = {
+    "prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0,
+    "cost": 0, "reasoning_tokens": 0, "cached_tokens": 0,
+}
+
+
 def call_llm(prompt: str, cfg: Config, logger: RunLogger, stage: str, max_tokens: int = 3600) -> tuple[str, dict[str, Any]]:
     base = cfg.llm_base_url.rstrip("/")
     url = f"{base}/chat/completions"
@@ -456,27 +479,26 @@ def process_student(
     run_logger: RunLogger,
     cfg: Config,
     force: bool,
+    run_id: str,
 ) -> dict[str, Any]:
     exam_name = exam_dir.name
     student_name = student_pdf.stem
 
-    eval_dir = exam_dir / "eval" / normalize_name(student_name)
+    eval_dir = exam_dir / "eval" / run_id / normalize_name(student_name)
     eval_dir.mkdir(parents=True, exist_ok=True)
     status_path = eval_dir / "status.json"
     status = load_status(status_path)
 
-    # stage 1: OCR for student (answer OCR handled once per exam)
+    # stage 1: OCR for student — shared cache across runs (keyed by PDF hash)
     student_ocr_cache = exam_dir / "eval" / "_cache" / "ocr" / sha256_file(student_pdf)
     student_md_path = student_ocr_cache / "full.md"
 
-    ocr_hash = sha256_text(sha256_file(student_pdf))
-    if force or not stage_cache_hit(status, "ocr", ocr_hash) or not student_md_path.exists():
+    if force or not student_md_path.exists():
         try:
             student_md_path = run_mineru_ocr(repo_root, student_pdf, student_ocr_cache, cfg, run_logger)
-            status = mark_stage(status, "ocr", True, ocr_hash, {"md_path": str(student_md_path)})
             run_logger.event(exam=exam_name, student=student_name, stage="ocr", result="ok")
         except Exception as exc:
-            status = mark_stage(status, "ocr", False, ocr_hash, {"error": str(exc)})
+            status = mark_stage(status, "ocr", False, "", {"error": str(exc)})
             atomic_write_json(status_path, status)
             run_logger.event(exam=exam_name, student=student_name, stage="ocr", result="failed", error=str(exc))
             return {"student": student_name, "ok": False, "failed_stage": "ocr", "error": str(exc)}
@@ -486,6 +508,8 @@ def process_student(
     student_md_text = student_md_path.read_text(encoding="utf-8", errors="ignore")
     atomic_write_text(eval_dir / "题目与标答.md", answer_md_text)
     atomic_write_text(eval_dir / "作答md.md", student_md_text)
+
+    student_usage: dict[str, dict[str, Any]] = {"judge": dict(ZERO_USAGE), "check": dict(ZERO_USAGE)}
 
     # stage 2: judge
     judge_input_hash = sha256_text(
@@ -498,15 +522,17 @@ def process_student(
         try:
             prompt = build_judge_prompt(answer_md_text, student_md_text, exam_name, student_name)
             judge_text, judge_raw = call_llm(prompt, cfg, run_logger, stage="judge", max_tokens=3200)
+            student_usage["judge"] = extract_usage(judge_raw)
             atomic_write_text(judge_out_path, judge_text)
             atomic_write_json(judge_raw_path, judge_raw)
             status = mark_stage(status, "judge", True, judge_input_hash, {"output": str(judge_out_path)})
-            run_logger.event(exam=exam_name, student=student_name, stage="judge", result="ok")
+            run_logger.event(exam=exam_name, student=student_name, stage="judge", result="ok",
+                             tokens=student_usage["judge"]["total_tokens"], cost=student_usage["judge"]["cost"])
         except Exception as exc:
             status = mark_stage(status, "judge", False, judge_input_hash, {"error": str(exc)})
             atomic_write_json(status_path, status)
             run_logger.event(exam=exam_name, student=student_name, stage="judge", result="failed", error=str(exc))
-            return {"student": student_name, "ok": False, "failed_stage": "judge", "error": str(exc)}
+            return {"student": student_name, "ok": False, "failed_stage": "judge", "error": str(exc), "usage": student_usage}
     else:
         run_logger.event(exam=exam_name, student=student_name, stage="judge", result="cache-hit")
 
@@ -531,22 +557,24 @@ def process_student(
                 student_pdf_name=student_pdf.name,
             )
             check_text, check_raw = call_llm(prompt, cfg, run_logger, stage="check", max_tokens=3600)
+            student_usage["check"] = extract_usage(check_raw)
             check_part, final_part = parse_check_sections(check_text)
             atomic_write_text(check_out_path, check_part)
             atomic_write_text(final_out_path, final_part)
             atomic_write_json(check_raw_path, check_raw)
             status = mark_stage(status, "check", True, check_input_hash, {"output": str(final_out_path)})
-            run_logger.event(exam=exam_name, student=student_name, stage="check", result="ok")
+            run_logger.event(exam=exam_name, student=student_name, stage="check", result="ok",
+                             tokens=student_usage["check"]["total_tokens"], cost=student_usage["check"]["cost"])
         except Exception as exc:
             status = mark_stage(status, "check", False, check_input_hash, {"error": str(exc)})
             atomic_write_json(status_path, status)
             run_logger.event(exam=exam_name, student=student_name, stage="check", result="failed", error=str(exc))
-            return {"student": student_name, "ok": False, "failed_stage": "check", "error": str(exc)}
+            return {"student": student_name, "ok": False, "failed_stage": "check", "error": str(exc), "usage": student_usage}
     else:
         run_logger.event(exam=exam_name, student=student_name, stage="check", result="cache-hit")
 
     atomic_write_json(status_path, status)
-    return {"student": student_name, "ok": True}
+    return {"student": student_name, "ok": True, "usage": student_usage}
 
 
 
@@ -559,6 +587,7 @@ def process_exam(
     max_students: int | None,
     student_regex: str | None,
     sleep_sec: float,
+    run_id: str,
 ) -> dict[str, Any]:
     exam_name = exam_dir.name
     answer_pdf = pick_answer_pdf(exam_dir / "answer")
@@ -571,28 +600,53 @@ def process_exam(
 
     run_logger.event(exam=exam_name, stage="exam", action="start", student_count=len(students), answer=answer_pdf.name)
 
-    answer_ocr_cache = exam_dir / "eval" / "_cache" / "ocr" / sha256_file(answer_pdf)
-    answer_md_path = answer_ocr_cache / "full.md"
+    answer_ocr_dir = exam_dir / "answer"
+    answer_md_path = answer_ocr_dir / "full.md"
     if force or not answer_md_path.exists():
-        answer_md_path = run_mineru_ocr(repo_root, answer_pdf, answer_ocr_cache, cfg, run_logger)
+        answer_md_path = run_mineru_ocr(repo_root, answer_pdf, answer_ocr_dir, cfg, run_logger)
     else:
         run_logger.event(exam=exam_name, stage="ocr", action="cache-hit", file=answer_pdf.name)
     answer_md_text = answer_md_path.read_text(encoding="utf-8", errors="ignore")
 
-    summary = {"exam": exam_name, "total": len(students), "ok": 0, "failed": 0, "failed_items": []}
+    summary: dict[str, Any] = {"exam": exam_name, "total": len(students), "ok": 0, "failed": 0, "failed_items": []}
+    exam_usage = dict(ZERO_USAGE)
+    per_student_usage: list[dict[str, Any]] = []
 
     for idx, student_pdf in enumerate(students, start=1):
         run_logger.event(exam=exam_name, stage="student", action="start", index=idx, student=student_pdf.name)
-        result = process_student(repo_root, exam_dir, answer_md_text, answer_pdf, student_pdf, run_logger, cfg, force)
+        result = process_student(repo_root, exam_dir, answer_md_text, answer_pdf, student_pdf, run_logger, cfg, force, run_id)
         if result.get("ok"):
             summary["ok"] += 1
         else:
             summary["failed"] += 1
             summary["failed_items"].append(result)
+
+        stu_usage = result.get("usage") or {}
+        stu_total = dict(ZERO_USAGE)
+        for stage_usage in stu_usage.values():
+            stu_total = sum_usage(stu_total, stage_usage)
+            exam_usage = sum_usage(exam_usage, stage_usage)
+        per_student_usage.append({"student": result["student"], "stages": stu_usage, "total": stu_total})
+
         if sleep_sec > 0 and idx < len(students):
             time.sleep(sleep_sec)
 
-    run_logger.event(exam=exam_name, stage="exam", action="done", ok=summary["ok"], failed=summary["failed"])
+    run_dir = exam_dir / "eval" / run_id
+    atomic_write_json(
+        run_dir / "token_usage.json",
+        {
+            "run_id": run_id,
+            "exam": exam_name,
+            "model": cfg.llm_model,
+            "generated_at": now_iso(),
+            "total": exam_usage,
+            "per_student": per_student_usage,
+        },
+    )
+
+    summary["usage"] = exam_usage
+    run_logger.event(exam=exam_name, stage="exam", action="done", ok=summary["ok"], failed=summary["failed"],
+                     total_tokens=exam_usage["total_tokens"], total_cost=exam_usage["cost"])
     return summary
 
 
@@ -642,7 +696,7 @@ def main() -> None:
             print(f"[WARN] exam dir missing: {exam_dir}")
             continue
 
-        run_dir = exam_dir / "eval" / "_runs" / run_id
+        run_dir = exam_dir / "eval" / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
         atomic_write_json(
             run_dir / "run_meta.json",
@@ -667,11 +721,17 @@ def main() -> None:
             max_students=args.max_students,
             student_regex=args.student_regex,
             sleep_sec=args.sleep,
+            run_id=run_id,
         )
         overall["results"].append(summary)
 
     overall["finished_at"] = now_iso()
     atomic_write_json(report_dir / f"run_{run_id}.json", overall)
+
+    grand_usage = dict(ZERO_USAGE)
+    for item in overall["results"]:
+        grand_usage = sum_usage(grand_usage, item.get("usage") or {})
+    overall["usage"] = grand_usage
 
     lines = [
         f"# Batch Run Report ({run_id})",
@@ -682,11 +742,20 @@ def main() -> None:
         "",
         "## Summary",
         "",
-        "| exam | total | ok | failed |",
-        "|---|---:|---:|---:|",
+        "| exam | total | ok | failed | tokens | cost |",
+        "|---|---:|---:|---:|---:|---:|",
     ]
     for item in overall["results"]:
-        lines.append(f"| {item['exam']} | {item['total']} | {item['ok']} | {item['failed']} |")
+        u = item.get("usage") or {}
+        lines.append(f"| {item['exam']} | {item['total']} | {item['ok']} | {item['failed']}"
+                      f" | {u.get('total_tokens', 0):,} | ${u.get('cost', 0):.4f} |")
+
+    lines.append("")
+    lines.append(f"**Total tokens: {grand_usage['total_tokens']:,}** "
+                 f"(prompt: {grand_usage['prompt_tokens']:,}, "
+                 f"completion: {grand_usage['completion_tokens']:,}, "
+                 f"reasoning: {grand_usage['reasoning_tokens']:,})")
+    lines.append(f"**Total cost: ${grand_usage['cost']:.4f}**")
 
     lines.append("\n## Failed Items\n")
     has_failed = False
